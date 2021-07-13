@@ -16,7 +16,7 @@ INIT_SCRIPT="kbus-daemond"
 opkg install --force-reinstall ipk/$JSONC_IPK
 
 # copy the bin
-mv bin/$BINFILE /bin/
+mv bin/$BINFILE /bin/ && chmod +x /bin/kbus-daemon
 
 #copy over the config
 mkdir $CONFIG_DIR && mv kbus_mqtt_client/$CONFIG_FILE $CONFIG_DIR
@@ -26,3 +26,6 @@ mv init.d/$INIT_SCRIPT $INIT_DIR && chmod +x $INIT_DIR/$INIT_SCRIPT
 
 # make the linker script
 cd /etc/rc.d && ln -s ../init.d/$INIT_SCRIPT S99_kbus-daemond
+
+# clean up 
+rm -r /root/main.zip && rm -r /root/kbus-daemon-installer-main
