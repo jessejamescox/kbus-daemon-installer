@@ -3,7 +3,7 @@ JSONC_IPK="json-c_0.12.1+20160607_armhf.ipk"
 
 BIN_FILE="kbus-daemon"
 
-CONFIG_DIR="/etc/kbus_mqtt_client"
+CONFIG_DIR="/etc/kbus-daemon"
 CONFIG_FILE="kbus-daemon.cfg"
 
 INIT_DIR="/etc/init.d"
