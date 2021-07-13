@@ -11,7 +11,7 @@ INIT_SCRIPT="kbus-daemond"
 
 #stop the runtime
 echo "switching off PLC runtime"
-./config_runtime runtime-version=0
+/etc/config-tools/config_runtime runtime-version=0
 
 # execute the ipk file
 echo "installing the json-c ipk"
