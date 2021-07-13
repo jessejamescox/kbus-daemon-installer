@@ -1,5 +1,5 @@
 # kbus-daemon-installer
-## Based on [kbus-daemon](https://github.com/jessejamescox/wago-kbus-daemon) that allows for read/write the WAGO Kbus over MQTT.
+## Based on [kbus-daemon](https://github.com/jessejamescox/wago-kbus-daemon) that allows for read/write the WAGO Kbus over MQTT
 
 Install the kbus driver for mqtt on WAGO PFC100 and PFC200 controllers
 
