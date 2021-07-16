@@ -1,13 +1,41 @@
-# kbus-daemon-installer
-## Based on [kbus-daemon](https://github.com/jessejamescox/wago-kbus-daemon) that allows for read/write the WAGO Kbus over MQTT
+<h1 style="font-weight:normal">
+  &nbsp;WAGO PFC Kbus Daemon Installer&nbsp;
+  <a href="kbus-daemon gif"><img src=images/daemon-installer.gif></a>
+</h1>
 
-Install the kbus driver for mqtt on WAGO PFC100 and PFC200 controllers
+An open source MQTT driver for WAGO PFC controllers backplane.
 
-1. Download and run the kbus-daemon installer script:
+This project is still in beta - please use at your own risk and post any bugs to [issues](https://github.com/jessejamescox/kbus-daemon-installer/issues)
+<br>
 
-    `wget https://github.com/jessejamescox/kbus-daemon-installer/archive/refs/heads/main.zip && unzip main.zip
-    && sh kbus-daemon-installer-main/installer.sh`
+Features
+========
+* Kbus connects directly to MQTT broker either onboard the controller or externally
+* Status and error messages are sent under <NodeID>/kbus/status topic
+* Kbus process data is transmitted under <NodeID>/kbus/event <inputs/outputs> topic
+* Supoprt all WAGO "simple" modules, analog and digital
+* Entirely event driven I/O bus minimizes network stress
+* Very low CPU resource usage
 
-2. Navigate to /etc/kbus-daemon/kbus-daemon.cfg and configure the mqtt client
+Get started
+===========
+Install the driver on your controller.  This is done with the following command:
+`wget https://github.com/jessejamescox/kbus-daemon-installer/archive/refs/heads/main.zip && unzip main.zip && sh kbus-daemon-installer-main/installer.sh`
 
-5. reboot the controller and the service will start when the start/stop/reset switch is in the run position
+Requirements
+============
+* WAGO PFC with firmware >= 18
+
+Development
+=======
+This project is open source and can be modified. See here for the development repo [kbus-daemon source](https://github.com/jessejamescox/wago-kbus-daemon) for more information.
+
+
+License
+=======
+node-red-contrib-wago is under the MIT license. See the [LICENSE](https://github.com/jessejamescox/kbus-daemon-installer/blob/main/LICENSE.md) for more information.
+
+Links
+=====
+* [Jesse Cox YouTube](https://www.youtube.com/channel/UCXEwdiyGgzVDJD48f7rWOAw)
+* [Jesse Cox LinkedIn](https://www.linkedin.com/in/jesse-cox-90535110/)
