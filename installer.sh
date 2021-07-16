@@ -1,10 +1,13 @@
 #!/bin/bash
 JSONC_IPK="json-c_0.12.1+20160607_armhf.ipk"
+MOSQT_IPK="mosquitto_1.4.14_armhf.ipk"
 
 BIN_FILE="kbus-daemon"
 
-CONFIG_DIR="/etc/kbus-daemon"
-CONFIG_FILE="kbus-daemon.cfg"
+KBUS_CONFIG_DIR="/etc/kbus-daemon"
+KBUS_CONFIG_FILE="kbus-daemon.cfg"
+
+MOSQ_CONFIG_FILE="kbus-daemon.cfg"
 
 INIT_DIR="/etc/init.d"
 INIT_SCRIPT="kbus-daemond"
@@ -17,13 +20,19 @@ echo "switching off PLC runtime"
 echo "installing the json-c ipk"
 opkg install --force-reinstall ipk/$JSONC_IPK
 
+echo "installing MQTT broker"
+opkg install --force-downgrade ipk/$MOSQT_IPK
+
+echo "moving the mosquitto config file to /etc"
+mv mosquitto/$MOSQ_CONFIG_FILE /etc/$MOSQ_CONFIG_FILE
+
 # copy the bin
 echo "moving the binary file"
 mv bin/$BIN_FILE /bin/ && chmod +x /bin/$BIN_FILE
 
 #copy over the config
 echo "adding config directory and file"
-mkdir $CONFIG_DIR && mv kbus_mqtt_client/$CONFIG_FILE $CONFIG_DIR
+mkdir $KBUS_CONFIG_DIR && mv kbus_mqtt_client/$KBUS_CONFIG_FILE $KBUS_CONFIG_DIR
 
 #copy the init.d script and link it to the start
 echo "adding init script and startup behavior"
