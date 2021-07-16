@@ -46,4 +46,4 @@ cd /etc/rc.d && ln -s ../init.d/$INIT_SCRIPT S99_kbus-daemond
 echo "cleaning up"
 rm -r /root/main.zip && rm -r /root/kbus-daemon-installer-main
 
-echo "INSTALL COMPLETE - make sure you update the config file at /etc/kbus-daemon.conf"
+echo "INSTALL COMPLETE - make sure you update the configuration file at /etc/kbus-daemon.conf"
