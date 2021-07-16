@@ -34,7 +34,7 @@ This project is open source and can be modified. See here for the development re
 
 License
 =======
-node-red-contrib-wago is under the MIT license. See the [LICENSE](https://github.com/jessejamescox/kbus-daemon-installer/blob/main/LICENSE.md) for more information.
+kbus-daemon-installer is under the MIT license. See the [LICENSE](https://github.com/jessejamescox/kbus-daemon-installer/blob/main/LICENSE.md) for more information.
 
 Links
 =====
