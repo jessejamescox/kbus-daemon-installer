@@ -10,7 +10,7 @@ BIN_FILE="kbus-daemon"
 KBUS_CONFIG_DIR="/etc/kbus-daemon"
 KBUS_CONFIG_FILE="kbus-daemon.cfg"
 
-MOSQ_CONFIG_FILE="mosquitto.cfg"
+MOSQ_CONFIG_FILE="mosquitto.conf"
 
 INIT_DIR="/etc/init.d"
 INIT_SCRIPT="kbus-daemond"
@@ -38,7 +38,7 @@ mv bin/$BIN_FILE /bin/ && chmod +x /bin/$BIN_FILE
 
 #copy over the config
 echo "adding config directory and file"
-mkdir $KBUS_CONFIG_DIR && mv $KBUS_CONFIG_DIR/$KBUS_CONFIG_FILE $KBUS_CONFIG_DIR
+mkdir $KBUS_CONFIG_DIR && mv kbus-daemon/$KBUS_CONFIG_FILE $KBUS_CONFIG_DIR
 
 #copy the init.d script and link it to the start
 echo "adding init script and startup behavior"
