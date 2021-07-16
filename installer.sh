@@ -1,4 +1,7 @@
 #!/bin/bash
+
+EXEC_DIR="kbus-daemon-installer-main/"
+
 JSONC_IPK="json-c_0.12.1+20160607_armhf.ipk"
 MOSQT_IPK="mosquitto_1.4.14_armhf.ipk"
 
@@ -11,6 +14,9 @@ MOSQ_CONFIG_FILE="mosquitto.cfg"
 
 INIT_DIR="/etc/init.d"
 INIT_SCRIPT="kbus-daemond"
+
+echo "entering installer directory"
+cd $EXEC_DIR
 
 #stop the runtime
 echo "switching off PLC runtime"
