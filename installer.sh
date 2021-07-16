@@ -7,7 +7,7 @@ BIN_FILE="kbus-daemon"
 KBUS_CONFIG_DIR="/etc/kbus-daemon"
 KBUS_CONFIG_FILE="kbus-daemon.cfg"
 
-MOSQ_CONFIG_FILE="kbus-daemon.cfg"
+MOSQ_CONFIG_FILE="mosquitto.cfg"
 
 INIT_DIR="/etc/init.d"
 INIT_SCRIPT="kbus-daemond"
