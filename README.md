@@ -20,6 +20,7 @@ Features
 Get started
 ===========
 Install the driver on your controller.  This is done with the following command:
+
 `wget https://github.com/jessejamescox/kbus-daemon-installer/archive/refs/heads/main.zip && unzip main.zip && sh kbus-daemon-installer-main/installer.sh`
 
 Requirements
