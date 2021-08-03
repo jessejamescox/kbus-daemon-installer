@@ -7,7 +7,7 @@ An open source MQTT driver for WAGO PFC controllers backplane.
 
 This project is still in beta - please use at your own risk and post any bugs to [issues](https://github.com/jessejamescox/kbus-daemon-installer/issues)
 
-Version 2.0 introduces pdates that will break version 1.X.X.  
+Version 2.0 introduces updates that will break version 1.X.X.  of the node-red-contrib-wago nodes for Node-RED.
 <br>
 
 Features
@@ -32,6 +32,14 @@ Requirements
 Development
 =======
 This project is open source and can be modified. See here for the development repo [kbus-daemon source](https://github.com/jessejamescox/wago-kbus-daemon) for more information.
+
+Changelog
+=======
+* 8-2-2021  Restructured the JSON payload to make it more IoT friendly
+*           Added API allows you to tag IO channels and set deadband threshold for analog inputs
+*           Removed the integrated mosquitto broker.  If this is required you must use Docker to add the broker or connect to external broker
+*           Added support for mqtt connection via TLS
+*           Added supoprt for AWS IoT Thing shadow topic and message formatting
 
 
 License
