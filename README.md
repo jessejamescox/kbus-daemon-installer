@@ -31,19 +31,23 @@ Kbus input events:
 Input events will be transmitted upon change-of-state. This will be a JSON structured message the the module position and channel position.  
  For example:
 
-```{state:{
+```
+{state:{
       reported:{
-            controller:{
-                modules:{
-                    module1:{
-                      channels:{
-                        channel1:{value: 123}
-                        }
-                      }
-                    }
-                  }
+        controller:{
+          modules:{
+            module1:{
+              channels:{
+                channel1:{
+                  value: 123
                 }
-              }```
+              }
+            }
+          }
+        }
+      }
+    }
+```
 
 # Requirements
 
