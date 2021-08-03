@@ -26,12 +26,6 @@ echo "switching off PLC runtime"
 echo "installing the json-c ipk"
 opkg install --force-reinstall ipk/$JSONC_IPK
 
-echo "installing MQTT broker"
-opkg install --force-downgrade ipk/$MOSQT_IPK
-
-echo "moving the mosquitto config file to /etc"
-mv mosquitto/$MOSQ_CONFIG_FILE /etc/$MOSQ_CONFIG_FILE
-
 # copy the bin
 echo "moving the binary file"
 mv bin/$BIN_FILE /bin/ && chmod +x /bin/$BIN_FILE

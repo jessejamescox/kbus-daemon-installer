@@ -1,11 +1,13 @@
 <h1 style="font-weight:normal">
-  &nbsp;WAGO PFC Kbus Daemon Installer&nbsp;
+  &nbsp;WAGO PFC Kbus Daemon Installer v2.0.0 &nbsp;
   <a href="kbus-daemon gif"><img src=images/daemon-installer.gif></a>
 </h1>
 
 An open source MQTT driver for WAGO PFC controllers backplane.
 
 This project is still in beta - please use at your own risk and post any bugs to [issues](https://github.com/jessejamescox/kbus-daemon-installer/issues)
+
+Version 2.0 introduces pdates that will break version 1.X.X.  
 <br>
 
 Features
