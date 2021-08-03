@@ -25,9 +25,9 @@ Install the driver on your controller. This is done with the following command:
 
 `wget https://github.com/jessejamescox/kbus-daemon-installer/archive/refs/heads/main.zip && unzip main.zip && sh kbus-daemon-installer-main/installer.sh`
 
-# The API
+## The API
 
-Kbus input events:
+# Kbus input events:
 Input events will be transmitted upon change-of-state. This will be a JSON structured message the the module position and channel position.  
  For example:
 
