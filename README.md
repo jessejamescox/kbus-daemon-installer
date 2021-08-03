@@ -32,21 +32,23 @@ Install the driver on your controller. This is done with the following command:
 Input events will be transmitted upon change-of-state. This will be a JSON structured message the the module position and channel position. The output structure follows the formatting for state.reported For example:
 
 ```
-{state:{
-      reported:{
-        controller:{
-          modules:{
-            module1:{
-              channels:{
-                channel1:{
-                  value: 123
-                }
+{
+  "state": {
+    "reported": {
+      "controller": {
+        "modules": {
+          "module1": {
+            "channels": {
+              "channel1": {
+                "value": 123
               }
             }
           }
         }
       }
     }
+  }
+}
 ```
 
 ## KBUS output commands:
@@ -54,21 +56,23 @@ Input events will be transmitted upon change-of-state. This will be a JSON struc
 Similar to the input structure, you can command outputs over MQTT by passing a JSON object with the following structure:
 
 ```
-{state:{
-      desired:{
-        controller:{
-          modules:{
-            module2:{
-              channels:{
-                channel1:{
-                  value: true
-                }
+{
+  "state": {
+    "desired": {
+      "controller": {
+        "modules": {
+          "module2": {
+            "channels": {
+              "channel1": {
+                "value": true
               }
             }
           }
         }
       }
     }
+  }
+}
 ```
 
 ## KBUS chnnel configuration:
@@ -76,22 +80,24 @@ Similar to the input structure, you can command outputs over MQTT by passing a J
 Channel parameters can be configured by passing values as well.  Here is an example for setting a deadband and a label to the specific channel:
 
 ```
-{state:{
-      desired:{
-        controller:{
-          modules:{
-            module3:{
-              channels:{
-                channel1:{
-                  label: "tankLevel_4-20ma",
-                  deadband: 25
-                }
+{
+  "state": {
+    "desired": {
+      "controller": {
+        "modules": {
+          "module3": {
+            "channels": {
+              "channel1": {
+                "label": "tankLevel_4-20ma",
+                "deadband": 25
               }
             }
           }
         }
       }
     }
+  }
+}
 ```
 
 Currently the only supported configurations are deadband for analog inputs, and label for all channels.   More are planned with future development.
