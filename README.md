@@ -1,5 +1,5 @@
 <h1 style="font-weight:normal">
-  &nbsp;WAGO PFC Kbus Daemon Installer v2.0.0 &nbsp;
+  &nbsp;WAGO PFC KBUS Daemon Installer v2.0.0 &nbsp;
   <a href="kbus-daemon gif"><img src=images/daemon-installer.gif></a>
 </h1>
 
@@ -12,9 +12,9 @@ Version 2.0 introduces updates that will break version 1.X.X. of the node-red-co
 
 # Features
 
-- Kbus connects directly to MQTT broker either onboard the controller or externally
+- KBUS connects directly to MQTT broker either onboard the controller or externally
 - Status and error messages are sent under <NodeID>/kbus/status topic
-- Kbus process data is transmitted under <NodeID>/kbus/event <inputs/outputs> topic
+- KBUS process data is transmitted under <NodeID>/kbus/event <inputs/outputs> topic
 - Supoprt all WAGO "simple" modules, analog and digital
 - Entirely event driven I/O bus minimizes network stress
 - Very low CPU resource usage
@@ -25,11 +25,11 @@ Install the driver on your controller. This is done with the following command:
 
 `wget https://github.com/jessejamescox/kbus-daemon-installer/archive/refs/heads/main.zip && unzip main.zip && sh kbus-daemon-installer-main/installer.sh`
 
-## The API
+# The API
 
-# Kbus input events:
-Input events will be transmitted upon change-of-state. This will be a JSON structured message the the module position and channel position.  
- For example:
+## KBUS input events:
+
+Input events will be transmitted upon change-of-state. This will be a JSON structured message the the module position and channel position. The output structure follows the formatting for state.reported For example:
 
 ```
 {state:{
@@ -48,6 +48,53 @@ Input events will be transmitted upon change-of-state. This will be a JSON struc
       }
     }
 ```
+
+## KBUS output commands:
+
+Similar to the input structure, you can command outputs over MQTT by passing a JSON object with the following structure:
+
+```
+{state:{
+      desired:{
+        controller:{
+          modules:{
+            module2:{
+              channels:{
+                channel1:{
+                  value: true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+```
+
+## KBUS chnnel configuration:
+
+Channel parameters can be configured by passing values as well.  Here is an example for setting a deadband and a label to the specific channel:
+
+```
+{state:{
+      desired:{
+        controller:{
+          modules:{
+            module3:{
+              channels:{
+                channel1:{
+                  label: "tankLevel_4-20ma",
+                  deadband: 25
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+```
+
+Currently the only supported configurations are deadband for analog inputs, and label for all channels.   More are planned with future development.
 
 # Requirements
 
@@ -74,4 +121,7 @@ kbus-daemon-installer is under the MIT license. See the [LICENSE](https://github
 
 - [Jesse Cox YouTube](https://www.youtube.com/channel/UCXEwdiyGgzVDJD48f7rWOAw)
 - [Jesse Cox LinkedIn](https://www.linkedin.com/in/jesse-cox-90535110/)
+
+```
+
 ```
