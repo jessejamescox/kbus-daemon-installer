@@ -35,11 +35,12 @@ This project is open source and can be modified. See here for the development re
 
 Changelog
 =======
-* 8-2-2021  Restructured the JSON payload to make it more IoT friendly
-*           Added API allows you to tag IO channels and set deadband threshold for analog inputs
-*           Removed the integrated mosquitto broker.  If this is required you must use Docker to add the broker or connect to external broker
-*           Added support for mqtt connection via TLS
-*           Added supoprt for AWS IoT Thing shadow topic and message formatting
+* 8-2-2021  
+* Restructured the JSON payload to make it more IoT friendly
+* Added API allows you to tag IO channels and set deadband threshold for analog inputs
+* Removed the integrated mosquitto broker.  If this is required you must use Docker to add the broker or connect to external broker
+* Added support for mqtt connection via TLS
+* Added supoprt for AWS IoT Thing shadow topic and message formatting
 
 
 License
