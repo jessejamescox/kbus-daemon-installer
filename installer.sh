@@ -15,6 +15,10 @@ MOSQ_CONFIG_FILE="mosquitto.conf"
 INIT_DIR="/etc/init.d"
 INIT_SCRIPT="kbus-daemond"
 
+# delete the zip immediately to make room
+echo "making some room"
+rm -r /root/main.zip
+
 echo "entering installer directory"
 cd $EXEC_DIR
 
@@ -48,6 +52,6 @@ cd /etc/rc.d && ln -s ../init.d/$INIT_SCRIPT S99_kbus-daemond
 
 # clean up 
 echo "cleaning up"
-rm -r /root/main.zip && rm -r /root/kbus-daemon-installer-main
+rm -r /root/kbus-daemon-installer-main
 
 echo "INSTALL COMPLETE - make sure you update the configuration file at /etc/kbus-daemon.conf"
