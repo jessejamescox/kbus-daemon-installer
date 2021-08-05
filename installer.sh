@@ -3,7 +3,7 @@
 EXEC_DIR="kbus-daemon-installer-main/"
 
 JSONC_IPK="json-c_0.12.1+20160607_armhf.ipk"
-MOSQT_IPK="mosquitto_1.4.14_armhf.ipk"
+MOSQT_IPK="mosquitto_2.0.0_armhf.ipk"
 
 BIN_FILE="kbus-daemon"
 
@@ -25,6 +25,10 @@ echo "switching off PLC runtime"
 # execute the ipk file
 echo "installing the json-c ipk"
 opkg install --force-reinstall ipk/$JSONC_IPK
+
+# execute the ipk file
+echo "updating mosquitto to version 2.0.0"
+opkg install ipk/$MOSQT_IPK
 
 # copy the bin
 echo "moving the binary file"
