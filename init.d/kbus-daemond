@@ -3,7 +3,7 @@
 # /etc/init.d/kbus-daemond
 
 DAEMON_PATH="/bin"
-DAEMON="kbus-daemon"
+DAEMON="kbus-api"
 
 NAME=kbus-daemon
 DESC="KBUS interface as MQTT client"
